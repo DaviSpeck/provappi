@@ -7,20 +7,10 @@
 		</div>
 		{% if senhas %}
 		<ul>
-            <span>Filtrar por:</span>
-            <select name="filter" id="filter" class="form-control">
-                <option value="">Escolha uma opção</option>
-                <option value="na-fila">Na fila</option>
-                <option value="em-atendimento">Em atendimento</option>
-                <option value="ausente">Ausente</option>
-                <option value="atendida">Atendida</option>
-            </select>
 			{% for senha in senhas %}
 			<li>
-                {% if senha.id_status_senha.nome == "Na fila"%}
-				    {{senha.senha}} | {{senha.id_status_senha.nome}}
-                    {% else %}
-                    
+                {% if senha.id_status_senha.nome == "Em atendimento"%}
+				    {{senha.senha}} | {{senha.id_status_senha.nome}}                    
                 {% endif %}
 			</li>
 			{% endfor %}
